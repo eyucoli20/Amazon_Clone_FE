@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    caret-color: auto;
+    caret-shape: bar;
+}
+
+input,
+textarea,
+[contenteditable] {
+    caret-color: #000;
+    caret-shape: bar;
+    animation: none !important;
+}
+
+/* Remove blinking cursor animation */
+@supports (caret-color: auto) {
+    input:focus,
+    textarea:focus,
+    [contenteditable]:focus {
+        caret-color: #000;
+    }
+}
+
+:root {
+    --primary-color: #febd69;
+    --primary-shade: #d49644;
+}
