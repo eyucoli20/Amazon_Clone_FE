@@ -8,7 +8,7 @@ function CategoryCard({data}) {
     return (
         <div className='category'>
             <Link to={`/category/${data.category?.replace(/\s+/g, '-')}`}>
-            {/* <Link to={`/category/${data.name} */}
+            {/* <Link to={`/category/${data.name}`}> */}
                 <span>
                     <h2>{data?.title}</h2>
                 </span>
