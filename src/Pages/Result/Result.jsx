@@ -51,7 +51,7 @@ function Result() {
                                 <ProductCard
                                     key={product.id}
                                     renderAdd={true}
-                                    product={product} 
+                                    product={product}
                                 />
                                 ) )}
                         </div>

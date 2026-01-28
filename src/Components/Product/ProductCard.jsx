@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { DataContext } from '../DataProvider.jsx/DataProvider'
 import { Type } from '../../Utility/action.type'
 
-function ProductCard({product, flex, renderDesc}) {
+function ProductCard({product, flex, renderDesc, renderAdd }) {
     
     if (!product || !product.id) return null;
 
@@ -37,9 +37,9 @@ function ProductCard({product, flex, renderDesc}) {
                 </div>
                 <div>
                     <CurrencyFormate amount={price}/>
-                    <button className='button' onClick = {addToCart}>
-                        add to cart
-                    </button>
+                    {renderAdd && <button className='button' onClick = {addToCart}>
+                            add to cart</button>
+                    }            
                 </div>
             </div>
         </div>
