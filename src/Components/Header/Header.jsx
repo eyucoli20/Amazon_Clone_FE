@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './LowerHeader';
 import './Header.css';
 import { Link } from 'react-router-dom';
@@ -8,8 +8,14 @@ import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartSharpIcon from '@mui/icons-material/AddShoppingCartSharp';
 import LocationOnSharpIcon from '@mui/icons-material/LocationOnSharp';
 import LowerHeader from './LowerHeader';
+import { DataContext } from '../DataProvider.jsx/DataProvider';
+
+
 
 function Header() {
+
+    const [{basket}, dispatch] = useContext(DataContext);
+    
     return (
     <>
         <section>
@@ -54,7 +60,7 @@ function Header() {
                     </Link>
                     <Link to="/cart" className='header__cart'>
                         <AddShoppingCartSharpIcon />
-                        <span>0</span>
+                        <span>{basket.length}</span>
                     </Link>
                 </div>
             </div>
