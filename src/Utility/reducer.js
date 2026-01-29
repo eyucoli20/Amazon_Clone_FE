@@ -25,10 +25,28 @@ export const reducer= (state, action) => {
                     basket: updatedBasket 
                     }
             }
-            
-            default:
-                return state;   
+
+        case Type.REMOVE_FROM_BASKET:
+            const index = state.basket.findIndex (item=> item.id === action.id)
+            let newBasket = [...state.basket]
+
+            if(index >= 0){
+                if(newBasket[index].amount > 1){
+                    newBasket[index] = {...newBasket[index], amount: newBasket[index].amount-1}
+                }else{ 
+                    newBasket.splice(index, 1);   
+
+                }
+            }
+            return {
+                ...state, 
+                basket : newBasket
+
+            }
+
+        default:
+                return state;  
+
     }
 }
 
-// const [state, dispatch] = useReducer(reducer, initialState);
